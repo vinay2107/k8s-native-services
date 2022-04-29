@@ -5,6 +5,11 @@ metadata:
   namespace: my-kafka-project
 spec:
   kafka:
+    template:
+      pod:
+        securityContext:
+          runAsUser: 0
+          fsGroup: 0
     replicas: 1
     listeners:
       - name: plain
@@ -35,6 +40,11 @@ spec:
       default.replication.factor: 1
       min.insync.replicas: 1
   zookeeper:
+    template:
+      pod:
+        securityContext:
+          runAsUser: 0
+          fsGroup: 0
     replicas: 1
     storage:
       type: persistent-claim
