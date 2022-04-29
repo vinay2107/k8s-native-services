@@ -20,7 +20,7 @@ kubectl -n my-kafka-project run kafka-consumer -ti --image=quay.io/strimzi/kafka
 
 ```shell
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts && helm repo update
-helm upgrade monitoring prometheus-community/kube-prometheus-stack --install -f values.yaml -n monitoring --create-namespace
+helm upgrade monitoring prometheus-community/kube-prometheus-stack --install -f values.yaml -n monitoring --create-namespace --set alertmanager.config.global.slack_api_url='<secret>'
 ```
 
 ## kustomize

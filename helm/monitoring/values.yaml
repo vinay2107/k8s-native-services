@@ -164,7 +164,7 @@ alertmanager:
   config:
     global:
       resolve_timeout: 5m
-      slack_api_url: 'https://hooks.slack.com/services/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'
+      #slack_api_url: set via --set option
     route:
       group_by: ['job']
       group_wait: 30s
