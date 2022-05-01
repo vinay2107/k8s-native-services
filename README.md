@@ -1,5 +1,7 @@
 # k8s-native-services
 
+## strimzi kafka
+
 ```shell
 # Installing Strimzi
 
