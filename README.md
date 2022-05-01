@@ -4,7 +4,7 @@
 # Installing Strimzi
 
 helm repo add strimzi https://strimzi.io/charts/ && helm repo update
-helm upgrade strimzi-kafka-operator --install strimzi/strimzi-kafka-operator -f values.yaml -n kafka --create-namespace
+helm upgrade strimzi-kafka-operator --install strimzi/strimzi-kafka-operator -f values.yaml -n kafka --create-namespace --version 0.28.0
 
 # Creating a cluster and a topic to publish and subscribe from external client
 kubectl apply -f kafka/
@@ -20,7 +20,14 @@ kubectl -n my-kafka-project run kafka-consumer -ti --image=quay.io/strimzi/kafka
 
 ```shell
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts && helm repo update
-helm upgrade monitoring prometheus-community/kube-prometheus-stack --install -f values.yaml -n monitoring --create-namespace --set alertmanager.config.global.slack_api_url='<secret>'
+helm upgrade monitoring prometheus-community/kube-prometheus-stack --install -f values.yaml -n monitoring --create-namespace --version 35.0.3 --set alertmanager.config.global.slack_api_url='<secret>'
+```
+
+## mongodb
+
+```shell
+helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update
+helm upgrade mongodb bitnami/mongodb --install -f values.yaml -n mongodb --create-namespace --version 12.0.0
 ```
 
 ## kustomize
