@@ -1,4 +1,5 @@
 # k8s-native-services
+[![K8s-native-env Setup](https://github.com/vinay2107/k8s-native-services/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/vinay2107/k8s-native-services/actions/workflows/github-actions-demo.yml)
 
 ## strimzi kafka
 
